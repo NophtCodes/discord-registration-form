@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discord - Registration Form Clone</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Open+Sans:wght@400;500;700&family=Quicksand:wght@400;500;700&display=swap"
+      href="https://fonts.cdnfonts.com/css/gg-sans-2?styles=149653,149656"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -17,20 +15,34 @@
       <h1>Create an account</h1>
       <form action="">
         <div>
-          <label for="">Email <span>*</span></label>
-          <input type="text" />
+          <label for="email" id="emailLabel">Email <span>*</span></label>
+          <input type="email" id="email" onkeyup="validateEmail()" />
         </div>
-        <div>
-          <label for="">Display name</label>
-          <input type="text" />
+        <div class="display-name">
+          <label for="displayName">Display name</label>
+          <input
+            type="text"
+            id="displayName"
+            data-target="additionalElement1"
+          />
+          <div class="additional-element" id="additionalElement1">
+            
+          </div>
         </div>
-        <div>
-          <label for="">username <span>*</span></label>
-          <input type="text" />
+        <div class="display-username">
+          <label for="displayUsername" id="usernameLabel">username <span>*</span></label>
+          <input id="displayUsername"
+            type="text"
+            data-target="additionalElement2"
+           
+          />
+          <div class="additional-element" id="additionalElement2">
+           
+          </div>
         </div>
-        <div>
-          <label for="password">password <span>*</span></label>
-          <input type="password" id="password" />
+        <div class="display-password">
+          <label for="password" id="passwordLabel">password <span>*</span></label>
+          <input type="password" id="password" onkeyup="validatePassword()"/>
         </div>
         <div>
           <label for="selectGroup" class="dateLabel"
@@ -113,7 +125,7 @@
             and special offers.You can opt out at any time.</label
           >
         </div>
-        <button>Continue</button>
+        <button type="submit" value="submit">Continue</button>
         <p class="agreement">
           By registering, you agree to Discord's
           <span>Terms of Service</span> and <span>Privacy Policy.</span>
